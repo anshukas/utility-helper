@@ -1,4 +1,4 @@
-package com.ncr.util;
+package com.noteslookup.util;
 
 public class NullOrEmpty {
 
