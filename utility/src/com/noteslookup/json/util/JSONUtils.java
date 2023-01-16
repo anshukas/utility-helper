@@ -76,6 +76,29 @@ public class JSONUtils {
 	public static boolean isNullOREmpty(JsonNode jsonNode) {
 		return ((null == jsonNode) || jsonNode.isNull() || jsonNode.isMissingNode() || jsonNode.isEmpty());
 	}
+	
+	/**
+	 * Checks if is not null.
+	 *
+	 * @param jsonNode
+	 *            the json node
+	 * @return true, if is not null
+	 */
+	public boolean isNotNull(JsonNode jsonNode) {
+		return ((null != jsonNode) && !jsonNode.isNull());
+	}
+
+	/**
+	 * Checks if is not null and is not Empty.
+	 *
+	 * @param jsonNode
+	 *            the json node
+	 * @return true, if is not null
+	 */
+	public boolean isNotEmpty(JsonNode jsonNode) {
+		return ((null != jsonNode) && !jsonNode.isNull() && !jsonNode.isMissingNode());
+	}
+
 
 	
 }
