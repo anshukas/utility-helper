@@ -1,4 +1,4 @@
-package com.bbb.composite.catalogue.utils;
+package com.noteslookup.common.util;
 
 import java.net.SocketException;
 import java.time.LocalDateTime;
