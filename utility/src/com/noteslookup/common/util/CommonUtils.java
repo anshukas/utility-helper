@@ -5,46 +5,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.context.request.RequestAttributes;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
 /**
  * Utility class.
- *   
- * @author BC52363
+ * @author anshukas
  *
  */
 
 public class CommonUtils {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(CommonUtils.class);
-	
-	public static HttpServletRequest getCurrentHttpRequest() {
-		RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
-		if (requestAttributes instanceof ServletRequestAttributes) {
-			HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
-			return request;
-		}
-		LOGGER.debug("Not called in the context of an HTTP request");
-		return null;
-	}
-
-	public static boolean isRealTimeLogInfoEnabled() {
-		HttpServletRequest currentRequest = getCurrentHttpRequest();
-		if (currentRequest != null && currentRequest.getParameter("logInfo") != null) {
-			return true;
-		}
-		return false;
-	}
 	
 	public static LocalDateTime convertStrDateToDate(String input, String format) {
 		DateTimeFormatter inputFormatter = new DateTimeFormatterBuilder()
