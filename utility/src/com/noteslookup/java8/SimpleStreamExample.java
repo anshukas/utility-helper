@@ -36,6 +36,13 @@ public class SimpleStreamExample {
         Set<Integer> oddNumbers = numbers.stream(). 
                                    filter(o -> o % 2 != 0). 
                                     collect(Collectors.toSet());
-        System.out.println(oddNumbers);
+        System.out.println("oddNumbers from set: --> " +oddNumbers);
+        
+		/* To find the first number which is divisible by both 2 and 3: */
+        Integer findFirst = numsList.stream().filter(i->i%2 == 0).filter(i->i%3==0).findFirst().get();
+        System.out.println("findFirst: --> "+findFirst);
+        
+        
+        
 	}
 }
