@@ -3,6 +3,7 @@ package com.noteslookup.java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Set;
 
 /** 
  * 
@@ -29,5 +30,12 @@ public class SimpleStreamExample {
 		/* convert from the wrapper class stream to the primitive stream */
 		int sum = Arrays.asList(33,45).stream().mapToInt(i -> i).sum();
 		System.out.println(sum);
+		
+		/* To find Odd Numbers from a set: */
+		Set<Integer> numbers = Set.of(1, 4, 8, 40, 11, 22, 33, 99); 
+        Set<Integer> oddNumbers = numbers.stream(). 
+                                   filter(o -> o % 2 != 0). 
+                                    collect(Collectors.toSet());
+        System.out.println(oddNumbers);
 	}
 }
