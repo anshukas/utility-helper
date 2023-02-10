@@ -52,5 +52,8 @@ public class SimpleStreamExample {
         List<Integer> listSorted = listUnsorted.stream().sorted().collect(Collectors.toList());
         System.out.println("ListSorted: --> " + listSorted);
         
+		/* Customized order - Desc Order . */
+        List<Integer> listSortedDesc = listUnsorted.stream().sorted((i1,i2) -> i2.compareTo(i1)).collect(Collectors.toList());
+        System.out.println("listSortedDesc: -->" +listSortedDesc);
 	}
 }
