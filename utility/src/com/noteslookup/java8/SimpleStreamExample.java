@@ -42,7 +42,15 @@ public class SimpleStreamExample {
         Integer findFirst = numsList.stream().filter(i->i%2 == 0).filter(i->i%3==0).findFirst().get();
         System.out.println("findFirst: --> "+findFirst);
         
+		/* Program for map() to UPPERCASE */
+        List<String> list = Arrays.asList("anshu", "shiwali", "ram");
+        List<String> listUpperCase = list.stream().map(s->s.toUpperCase()).collect(Collectors.toList());
+        System.out.println("listUpperCase: -->" + listUpperCase);
         
+		/* Processing by sorted()method: */
+        List<Integer> listUnsorted = Arrays.asList(10, 2, 1, 100, 50);
+        List<Integer> listSorted = listUnsorted.stream().sorted().collect(Collectors.toList());
+        System.out.println("ListSorted: --> " + listSorted);
         
 	}
 }
